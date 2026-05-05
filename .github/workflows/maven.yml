@@ -1,10 +1,17 @@
-name: Maven CI
+name: Maven CI with Checkstyle Bot
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ] # TRIGGER: Chạy khi có Pull Request vào main
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions: # Cấp quyền cho bot được viết comment vào PR
+      pull-requests: write
+      contents: read
 
     steps:
       - name: Checkout code
@@ -19,3 +26,10 @@ jobs:
 
       - name: Build and Test
         run: mvn clean verify
+
+      # INLINE FEEDBACK: Con bot Checkstyle sẽ soi lỗi và comment trực tiếp
+      - name: Checkstyle Report
+        uses: dbelyaev/action-checkstyle@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          level: 'warning'
