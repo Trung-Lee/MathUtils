@@ -7,4 +7,10 @@ public class MathUtilsTest {
         MathUtils math = new MathUtils();
         assertEquals(5, math.add(2, 3));
     }
+
+    @Test
+    public void testSubtract() {
+        MathUtils math = new MathUtils();
+        assertEquals(2, math.subtract(5, 3));
+    }
 }
