@@ -1,14 +1,14 @@
-public class MathUtils {
-    public int add(int a, int b) {
-        return a + b;
-    }
-    // test cache bai 6
-    public int subtract(int a, int b) {
-        return a - b;
-    }
+public class MathUtils
+{public int add(int a, int b)
+{int trash=99;return a + b;
+}
+// test cache bai 6
+public int subtract(int a, int b)
+{
+    return a - b;    }
 }
 
-/**
+/*
  lần 1 36s:
  Creating settings.xml with server-id: github
  Writing to /home/runner/.m2/settings.xml
@@ -21,4 +21,4 @@ public class MathUtils {
  /usr/bin/tar -xf /home/runner/work/_temp/0c7ccb1b-27ac-498b-9618-a0840ef6ab73/cache.tzst -P -C /home/runner/work/MathUtils/MathUtils --use-compress-program unzstd
  Cache restored successfully
  Cache restored from key: setup-java-Linux-x64-maven-a5b5a25399cda6d6101818b32771e402e19473f9951dc8ac9dd498406c3ebdfd
- **/
+ */
